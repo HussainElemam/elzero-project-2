@@ -693,7 +693,7 @@ header nav .nav-icon {
   background-image: url(../images/quote.jpg);
   text-align: center;
   color: white;
-  padding: 100px;
+  padding: 100px 0;
   background-size: cover;
   position: relative;
 }
@@ -745,6 +745,7 @@ q::before {
 .pricing .price {
   font-weight: 900;
   font-size: 60px;
+  position: relative;
 }
 .pricing .price::before {
   content: "$";
@@ -764,16 +765,21 @@ q::before {
   bottom: 6px;
 }
 .pricing .plan .feature {
-  padding: 0 70px;
-}
-.pricing .feature div:not(:last-child) {
-  border-bottom: 1px solid var(--main-color);
+  padding: 0;
 }
 .pricing .feature div {
-  padding: 10px;
+  padding: 20px;
+  position: relative;
 }
-.pricing a {
-
+.pricing .feature div:not(:last-child)::after {
+  content: "";
+  width: 140px;
+  height: 1px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .pricing article button {
   border: 1px solid var(--main-color);
@@ -789,5 +795,203 @@ q::before {
   background-color: var(--main-color);
   border: none;
   padding: 15px 25px;
+  transition-duration: .3s;
+}
+.pricing .container > button:hover {
+  background-color: #79e2ff;
+  cursor: pointer;
 }
 /* end Pricing */
+/* start subscribe */
+.subscribe {
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  margin: 100px 0;
+  color: white;
+  padding: 80px 10px;
+  position: relative;
+}
+.subscribe::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 50%);
+}
+.subscribe .container {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .subscribe .container {
+    display: flex;
+    gap: 50px;
+  }
+}
+.subscribe form {
+  border: 1px solid white;
+  max-width: 400px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.subscribe form i {
+  font-size: 20px;
+  padding: 20px;
+}
+.subscribe input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  flex: 1;
+  caret-color: var(--main-color);
+  flex-shrink: 1;
+  min-width: 0;
+}
+.subscribe input::placeholder {
+  color: white;
+}
+.subscribe input:focus {
+  outline: none;
+}
+.subscribe button {
+  background-color: var(--main-color);
+  padding: 20px;
+  height: 100%;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  transition-duration: .3s;
+}
+.subscribe button:hover {
+  background-color: #79e2ff;
+  cursor: pointer;
+}
+.subscribe .container > p {
+  line-height: 1.8;
+}
+/* end subscribe */
+/* start contact us */
+.contact-us article {
+  margin: 50px 0;
+}
+.contact-us .info {
+  text-align: center;
+}
+.contact-us h4 {
+  font-weight: normal;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 20px;
+}
+.contact-us li {
+  color: #888;
+  line-height: 1.8;
+}
+.contact-us .where-we-are li {
+  font-style: italic;
+}
+.contact-us form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+  flex: 1;
+}
+.contact-us input,
+.contact-us textarea {
+  border: 1px solid rgba(0,0,0, 20%);
+  padding: 20px;
+}
+.contact-us input:focus,
+.contact-us textarea:focus {
+  outline: none;
+}
+.contact-us input[type="submit"] {
+  background-color: var(--main-color);
+  padding: 20px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  transition-duration: .3s;
+  align-self: flex-end;
+}
+.contact-us input[type="submit"]:hover {
+  background-color: #79e2ff;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .contact-us article {
+    display: flex;
+    gap: 30px;
+  }
+  .contact-us .info {
+    order: 2;
+    text-align: start;
+    width: 30%;
+  }
+  .contact-us form {
+    margin-top: 0;
+  }
+}
+/* end contact us */
+/* start footer */
+footer {
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: 140px;
+  padding: 60px 15px;
+  z-index: -1;
+}
+footer::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 70%);
+  z-index: -1;
+}
+footer img {
+  width: 120px;
+}
+footer h4 {
+  font-weight: normal;
+  font-size: 26px;
+  text-transform: uppercase;
+  margin-top: 70px;
+  padding: 0 0 20px;
+  position: relative;
+}
+footer h4:after {
+  content: "";
+  width: 240px;
+  position: absolute;
+  height: 1px;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer .social-media {
+  font-size: 19px;
+  padding: 40px 0 80px;
+}
+footer .social-media a {
+  color: white;
+  margin: 18px;
+}
+footer p {
+  font-size: 20px;
+}
+footer span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+/* end footer */
